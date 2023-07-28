@@ -150,6 +150,24 @@ body {
     border-radius: 1%;
 }
 
+option {
+    background: var(--secondary) !important;
+    color: var(--primary);
+}
+
+select.inputBox {
+    appearance: none;
+    height: 66px;
+    width: 258px;
+    background: transparent;
+    background-image: url(arrow_drop_down_FILL0_wght400_GRAD0_opsz48.svg);
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+    cursor: pointer;
+
+}
+
 #email {
     grid-row: 2/3;
 }
