@@ -9,28 +9,33 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form action="" class="form">
-      <input
-        class="inputBox"
-        id="email"
-        type="text"
-        placeholder="Email"
-        required
-      />
+    <form action="" class="form" novalidate>
+      <div class="inputContainer" id="emailContainer">
+        <input
+          class="inputBox"
+          id="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <span class="error" id="emailError" aria-live="polite"></span>
+      </div>
       <select class="inputBox" id="country" required>
         <option value="uk">United Kingdom</option>
         <option value="us">United States</option>
         <option value="fr">France</option>
         <option value="de">Germany</option>
       </select>
-      <!-- <input
-        class="inputBox"
-        id="country"
-        type="text"
-        placeholder="Country"
-        required
-      /> -->
-      <input class="inputBox" id="zip" type="text" placeholder="Zip" required />
+      <div class="inputContainer" id="zipContainer">
+        <input
+          class="inputBox"
+          id="zip"
+          type="text"
+          placeholder="Zip"
+          required
+        />
+        <span class="error" id="zipError" aria-live="polite"></span>
+      </div>
       <input
         class="inputBox"
         id="password"
