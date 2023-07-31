@@ -33,9 +33,6 @@ function checkZIP() {
   const zipField = document.getElementById("zip");
   const constraint = new RegExp(constraints[country][0], "");
 
-  console.log(constraint);
-  console.log(zipField.value);
-
   if (constraint.test(zipField.value)) {
     // zipField.setCustomValidity("");
     zip.validity.valid = true;
@@ -81,7 +78,43 @@ function showError() {
   emailError.className = "error active";
 }
 
-// Running function on elements
+// Check Password
+const pass = document.querySelector("#password");
+const passError = document.querySelector("#password + span.error");
 
-// const subscribBtn = document.querySelector(".subscribeBtn");
-// subscribBtn.addEventListener("click", checkZIP);
+pass.addEventListener("input", (e) => {
+  checkPass();
+  if (!pass.validity.valid) {
+    e.preventDefault();
+  }
+});
+
+form.addEventListener("submit", (e) => {
+  checkPass();
+  if (!pass.validity.valid) {
+    e.preventDefault();
+  }
+});
+
+function checkPass() {
+  const constraintArray = [
+    "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
+    "Minimum eight characters, at least one letter, one number and one special character.",
+  ];
+
+  const constraint = new RegExp(constraintArray[0], "");
+
+  console.log(constraint);
+
+  if (constraint.test(pass.value)) {
+    pass.validity.valid = true;
+    passError.textContent = "";
+    console.log("valid");
+    passError.className = "error";
+  } else {
+    pass.validity.valid = false;
+    passError.textContent = constraintArray[1];
+    console.log("invalid");
+    passError.className = "error active";
+  }
+}
