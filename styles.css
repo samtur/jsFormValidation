@@ -118,7 +118,6 @@ body {
     display: grid;
     grid-template-rows: 2fr 6fr 2fr;
     grid-template-columns: 3fr 4fr 3fr;
-
 }
 
 /* Form */
@@ -133,7 +132,9 @@ body {
     align-items: center;
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr 3fr;
-    border-radius: 1%;
+    border-radius: 2px;
+    max-width: 372px;
+    justify-self: center;
 }
 
 /* Inputs */
@@ -144,15 +145,16 @@ body {
     border: 1px solid var(--primary);
     color: var(--primary);
     grid-column: 2/3;
-    height: 3rem;
-    width: 15rem;
+    height: 66px;
+    width: 258px;
+    box-sizing: border-box;
     padding: 0.5rem;
+    margin: 1rem 3.5rem 0rem;
 }
 
 .inputBox:focus {
-    border-radius: none;
-    border: 2px solid var(--primary);
-    outline: 0;
+    outline: transparent;
+    border: 2px solid var(--primary)
 }
 
 option {
@@ -199,21 +201,14 @@ select.inputBox {
     color: var(--primary);
 }
 
-/* input:invalid {
-    border-color: var(--final);
-} */
-
-/* input:focus:invalid {
-    outline: none;
-} */
-
 .error {
-    width: 100%;
+    width: 258px;
     padding: 0;
     font-size: 1rem;
     color: var(--secondary);
     background-color: var(--final);
     box-sizing: border-box;
+    margin: 0rem 3.5rem;
 }
 
 .error.active {
